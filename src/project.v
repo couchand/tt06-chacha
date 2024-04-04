@@ -23,7 +23,8 @@ module tt_um_couchand_chacha (
     .addr(addr),
     .write_n(write_n),
     .round_n(round_n),
-    .data_out(data_out)
+    .data_out(data_out),
+    .round_count(round_count)
   );
 
   assign uio_out = 8'b0;
@@ -34,11 +35,12 @@ module tt_um_couchand_chacha (
   reg write_n;
   reg round_n;
   wire [31:0] data_out;
+  wire [7:0] round_count;
 
   always @(posedge clk) begin
     if (!rst_n) begin
       data_in <= 32'b0;
-      addr <= 8'b0;
+      addr <= 4'b0;
       write_n <= 0;
       round_n <= 0;
     end else begin
