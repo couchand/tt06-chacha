@@ -36,6 +36,7 @@ module core (
     .d_out(d0_out)
   );
 
+/*
   wire [31:0] a1_in = cells[1];
   wire [31:0] b1_in = round_count[0] ? cells[6] : cells[5];
   wire [31:0] c1_in = round_count[0] ? cells[11] : cells[9];
@@ -98,6 +99,7 @@ module core (
     .c_out(c3_out),
     .d_out(d3_out)
   );
+*/
 
   always @(posedge clk) begin
     if (!rst_n) begin
@@ -110,21 +112,30 @@ module core (
     end else if (!round_n) begin
       if (!round_count[0]) begin
         cells[0] <= a0_out;
+/*
         cells[1] <= a1_out;
         cells[2] <= a2_out;
         cells[3] <= a3_out;
+*/
         cells[4] <= b0_out;
+/*
         cells[5] <= b1_out;
         cells[6] <= b2_out;
         cells[7] <= b3_out;
+*/
         cells[8] <= c0_out;
+/*
         cells[9] <= c1_out;
         cells[10] <= c2_out;
         cells[11] <= c3_out;
+*/
         cells[12] <= d0_out;
+/*
         cells[13] <= d1_out;
         cells[14] <= d2_out;
         cells[15] <= d3_out;
+*/
+/*
       end else begin
         cells[0] <= a0_out;
         cells[1] <= a1_out;
@@ -142,6 +153,7 @@ module core (
         cells[12] <= d1_out;
         cells[13] <= d2_out;
         cells[14] <= d3_out;
+*/
       end
       round_count <= round_count + 1;
     end
