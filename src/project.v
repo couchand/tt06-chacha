@@ -26,6 +26,9 @@ module tt_um_couchand_chacha (
     .data_out(data_out)
   );
 
+  assign uio_out = 8'b0;
+  assign uio_oe = 8'b0;
+
   reg [31:0] data_in;
   reg [3:0] addr;
   reg write_n;
