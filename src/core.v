@@ -57,7 +57,6 @@ module core (
     .d_out(d1_out)
   );
 
-/*
   wire [31:0] a2_in = cells[2];
   wire [31:0] b2_in = round_count[0] ? cells[7] : cells[6];
   wire [31:0] c2_in = round_count[0] ? cells[8] : cells[10];
@@ -79,6 +78,7 @@ module core (
     .d_out(d2_out)
   );
 
+/*
   wire [31:0] a3_in = cells[3];
   wire [31:0] b3_in = round_count[0] ? cells[4] : cells[7];
   wire [31:0] c3_in = round_count[0] ? cells[9] : cells[11];
@@ -113,26 +113,26 @@ module core (
       if (!round_count[0]) begin
         cells[0] <= a0_out;
         cells[1] <= a1_out;
-/*
         cells[2] <= a2_out;
+/*
         cells[3] <= a3_out;
 */
         cells[4] <= b0_out;
         cells[5] <= b1_out;
-/*
         cells[6] <= b2_out;
+/*
         cells[7] <= b3_out;
 */
         cells[8] <= c0_out;
         cells[9] <= c1_out;
-/*
         cells[10] <= c2_out;
+/*
         cells[11] <= c3_out;
 */
         cells[12] <= d0_out;
         cells[13] <= d1_out;
-/*
         cells[14] <= d2_out;
+/*
         cells[15] <= d3_out;
 */
 /*
